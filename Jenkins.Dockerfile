@@ -1,4 +1,5 @@
-FROM python:3.7-alpine
+ARG PYTHON_VERSION=3.6
+FROM python:${PYTHON_VERSION}-alpine
 USER root
 RUN apt-get update && apt-get -y install build-essential libsasl2-dev
 COPY . /usr/src/app
