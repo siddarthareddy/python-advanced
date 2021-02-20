@@ -1,5 +1,17 @@
 pipeline {
-  agent any
+  agent {
+    dockerfile {
+      filename 'jenkins.Dockerfile'
+      additionalBuildArgs (
+        '--build-arg PYTHON_VERSION=3.7 '
+      )
+      args (
+        '-ti ' +
+        '-u jenkins:jenkins ' +
+        '-v /var/run/docker.sock:/var/run/docker.sock '
+      )
+    }
+  }
   stages {
     stage('test-py36') {
       steps {
