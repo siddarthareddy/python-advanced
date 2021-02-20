@@ -1,18 +1,13 @@
 pipeline {
-  agent {
-    dockerfile {
-      filename 'jenkins.Dockerfile'
-      additionalBuildArgs (
-        '--build-arg PYTHON_VERSION=3.7 '
-      )
-      args (
-        '-ti ' +
-        '-u jenkins:jenkins ' +
-        '-v /var/run/docker.sock:/var/run/docker.sock '
-      )
-    }
-  }
+  agent any
   stages {
+    stage('set up') {
+      steps {
+        sh 'python3 -m venv venv &&\
+ venv/bin/pip3 install --upgrade pip &&\
+ venv/bin/pip3 install -e '.[all]''
+      }
+    }    
     stage('test-py36') {
       steps {
         sh 'tox -e py36'
