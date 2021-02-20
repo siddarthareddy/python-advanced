@@ -3,9 +3,9 @@ pipeline {
   stages {
     stage('set up') {
       steps {
-        sh 'python3 -m venv venv &&\
- venv/bin/pip3 install --upgrade pip &&\
- venv/bin/pip3 install -e '.[all]''
+        sh 'python3 -m venv venv'
+        sh 'venv/bin/pip3 install --upgrade pip'
+        sh 'venv/bin/pip3 install -e '.[all]''
       }
     }    
     stage('test-py36') {
