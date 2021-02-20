@@ -8,12 +8,12 @@ pipeline {
     }
     stage('distribute') {
       steps {
-//        sh 'python3 /usr/src/app/scripts/distribute.py'
+        sh 'echo hello'
       }
     }
     stage('deploy') {
       steps {
-//        sh 'python3 /usr/src/app/scripts/deploy.py'
+        sh 'echo jenkins'
       }
     }
   }
