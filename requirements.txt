@@ -1,9 +1,9 @@
-colorama
-requests
-bs4
+colorama~=0.4.4
+requests~=2.25.1
+bs4~=0.0.1
 
-unsync
-aiohttp
+unsync~=1.3
+aiohttp~=3.7.3
 cchardet
 requests
 bs4
@@ -13,3 +13,8 @@ colorama
 # Feel free to uncomment it but it also works without it
 # Just a little less well.
 # aiodns
+boto3~=1.17.14
+beautifulsoup4~=4.9.3
+uvloop~=0.15.0
+setuptools~=53.0.0
+python-dateutil~=2.8.1
