@@ -1,19 +1,24 @@
 pipeline {
   agent any
   stages {
+    stage('set up') {
+      steps {
+        sh 'echo hello'
+      }
+    }    
     stage('test-py36') {
       steps {
-        sh 'tox -e py36'
+        sh 'echo jeu'
       }
     }
     stage('distribute') {
       steps {
-//        sh 'python3 /usr/src/app/scripts/distribute.py'
+        sh 'echo hello'
       }
     }
     stage('deploy') {
       steps {
-//        sh 'python3 /usr/src/app/scripts/deploy.py'
+        sh 'echo jenkins'
       }
     }
   }
