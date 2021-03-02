@@ -4,13 +4,13 @@ import time
 
 
 async def download_file(url):
-    print(f'Strated downloading {url}')
+    print(f'Started downloading {url}')
     # session encapsulates connector instances in a connection pool
     # session supports async context managers i.e implemented __enter__, __exit__
     async with aiohttp.ClientSession() as session:
         async with session.get(url) as resp:
             content = await resp.read()
-            print(f'Fininshed downloading {url}')
+            print(f'Finished downloading {url}')
             return content
 
 
